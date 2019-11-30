@@ -24,7 +24,7 @@ class _FrameViewState extends State<FrameView> {
   Widget build(BuildContext context) {
     if (defaultTargetPlatform == TargetPlatform.android) {
       return AndroidView(
-        viewType: 'hua.ad/frameview',
+        viewType: 'bitores.ad/frameview',
         onPlatformViewCreated: _onPlatformViewCreated,
       );
     }
@@ -40,7 +40,7 @@ class _FrameViewState extends State<FrameView> {
 }
 
 class FrameViewController {
-  FrameViewController._(int id) : _channel = new MethodChannel('hua.ad/frameview$id');
+  FrameViewController._(int id) : _channel = new MethodChannel('bitores.ad/frameview$id');
   final MethodChannel _channel;
 
   /****

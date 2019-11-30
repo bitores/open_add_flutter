@@ -167,33 +167,33 @@ class FirstScreen1 extends StatelessWidget {
           height: 140,
           //width: 600,
         ),
-        Center(child: GestureDetector(child:Text("看20分钟视频",),onTap: showAd,),)
+        Center(child: GestureDetector(child:Text("看20分钟视频",),onTap: _onFrameViewCreated0,),)
 
       ],),
     );
   }
 
 
-  void showAd(){
+  void _onFrameViewCreated0(){
      //激励视频显示
-    // VideoAd.showVieo();
-     VideoAd.showVieoBaidu();
+    VideoAd.showVieo();
+    //  VideoAd.showVieoBaidu();
   }
 
   void _onFrameViewCreated(FrameViewController controller) {
     //穿山甲  feed广告  广告id
    controller.loadFeedAdCsj("901121737");
     //百度    广告id
-   controller.loadFeedAdBaidu("2058628");
+  //  controller.loadFeedAdBaidu("2058628");
 
 
   }
 
   void _onFrameViewCreated2(FrameViewController controller) {
     //穿山甲   nativebanner 广告id
-   // controller.loadNativeAd("901121423");
+   controller.loadNativeAd("901121423");
     //百度   nativebanner 广告id
-    controller.loadBannerBaidu('2015351');
+    // controller.loadBannerBaidu('2015351');
   }
 
 

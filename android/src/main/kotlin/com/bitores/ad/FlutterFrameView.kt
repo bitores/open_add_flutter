@@ -51,7 +51,7 @@ class FlutterFrameView(val mContext: Context, val messenger: BinaryMessenger, va
     init {
 
         frameView = FrameLayout(mContext)
-        methodChannel = MethodChannel(messenger, "hua.ad/frameview$id")
+        methodChannel = MethodChannel(messenger, "bitores.ad/frameview$id")
         methodChannel?.setMethodCallHandler(this)
         //mHandler.sendEmptyMessageDelayed(MSG_GO_MAIN, AD_TIME_OUT)
         // TogetherAdSplash.loadSplashAd(mContext,"801121648",frameView!!)

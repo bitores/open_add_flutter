@@ -8,8 +8,8 @@ import io.flutter.plugin.common.PluginRegistry
 
 object FrameViewPlugin {
 
-    const val ChannelName = "hua.ad/frameview"
-    const val ChannelKey= "hua.ad/ad"
+    const val ChannelName = "bitores.ad/frameview"
+    const val ChannelKey= "bitores.ad/ad"
 
     @JvmStatic
     fun registerWith(registry:PluginRegistry,activity: Activity) {

@@ -1,0 +1,35 @@
+PODS:
+  - ad (0.0.1):
+    - Bytedance-UnionAD (~> 1.9.8.2)
+    - Flutter
+  - Bytedance-UnionAD (1.9.8.5)
+  - Flutter (1.0.0)
+  - permission_handler (4.0.0):
+    - Flutter
+
+DEPENDENCIES:
+  - ad (from `.symlinks/plugins/ad/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Bytedance-UnionAD
+
+EXTERNAL SOURCES:
+  ad:
+    :path: ".symlinks/plugins/ad/ios"
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  permission_handler:
+    :path: ".symlinks/plugins/permission_handler/ios"
+
+SPEC CHECKSUMS:
+  ad: 81c81c08683a2d9a7822ba8c272369ab8262570c
+  Bytedance-UnionAD: a977fe9f56cd0832ea2e0c88ed9944f560e52935
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  permission_handler: 0fb88b8a3c23e31e5de45b8f1bb8b7de28cf8941
+
+PODFILE CHECKSUM: 2c26e2bafa90f053205a9e99ab1fdce88251e293
+
+COCOAPODS: 1.8.4

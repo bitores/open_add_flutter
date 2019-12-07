@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'dart:io';
 import 'package:flutter/services.dart';
 // import 'package:ad/ad.dart';
 import 'package:ad/video_ad.dart';
@@ -26,21 +26,43 @@ class MyApp extends StatefulWidget {
 
 Widget buildAdView(){
   return new Container(
-    child: new UiKitView(viewType: "AdView"),
-  );
+        // child: new UiKitView(viewType: "AdView"),
+        child: new Text( "AdView"),
+      );
+
+  // if(Platform.isIOS){
+  //     //ios相关代码
+      
+  //   }else if(Platform.isAndroid){
+  //     //android相关代码
+  //     return new Container(
+  //       child: new UiKitView(),
+  //     );
+  //   }
+
+  
 }
 
 class _MyAppState extends State<MyApp> {
 
-  static const EventChannel eventChannel = EventChannel('hua.ad.event');
-  static const MethodChannel testChannel = MethodChannel('hua.ad.test');
+  // static const EventChannel eventChannel = EventChannel('bitores.ad.event');
+  // static const MethodChannel testChannel = MethodChannel('bitores.ad.test');
 
-  static const MethodChannel ios_channel = const MethodChannel('hua.ad.ios');
+  static const MethodChannel ios_channel = const MethodChannel('bitores.ad.ios');
 
   @override
   void initState() {
-    eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+    
     super.initState();
+    if(Platform.isIOS){
+      //ios相关代码
+      print('is ios');
+      // eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+    }else if(Platform.isAndroid){
+      //android相关代码
+      print('is android');
+      // eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+    }
 
     requestPermiss();
    //sdk init
@@ -48,7 +70,7 @@ class _MyAppState extends State<MyApp> {
     VideoAd.initAdBaidu("e866cfb0");
     //VideoAd.initAdGdt("d3bdb4cf-e72b-4040-9439-9856020fbe8b");
     //激励视频初始化
-     VideoAd.initVieo("901121365");
+    VideoAd.initVieo("901121365");
     VideoAd.initVieoBaidu("5925490");
 
   }
@@ -64,13 +86,17 @@ class _MyAppState extends State<MyApp> {
 
     if(permissions[PermissionGroup.storage] != PermissionStatus.granted||permissions[PermissionGroup.phone] != PermissionStatus.granted){
       print("手机状态");
-      //bool isOpened = await PermissionHandler().openAppSettings();  打开设置
+      // bool isOpened = await PermissionHandler().openAppSettings();  //打开设置
       // 弹窗提示
-
+      Navigator.pushNamed(context, '/screen2');
     }else{
+      print('---下一个界面');
       //下一个界面 next
-      Navigator.pushNamed(context, '/screen1');
+      Navigator.pushNamed(context, '/screen1');//
+      // Navigator.pushNamed(context, '/screen2');
     }
+
+    
 
   }
 

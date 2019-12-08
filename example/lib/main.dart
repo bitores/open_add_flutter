@@ -26,26 +26,14 @@ class MyApp extends StatefulWidget {
 
 Widget buildAdView(){
   return new Container(
-        // child: new UiKitView(viewType: "AdView"),
-        child: new Text( "AdView"),
-      );
-
-  // if(Platform.isIOS){
-  //     //ios相关代码
-      
-  //   }else if(Platform.isAndroid){
-  //     //android相关代码
-  //     return new Container(
-  //       child: new UiKitView(),
-  //     );
-  //   }
-
+    child: new UiKitView(viewType:  "bitores.ad/frameview"),
+  );
   
 }
 
 class _MyAppState extends State<MyApp> {
 
-  // static const EventChannel eventChannel = EventChannel('bitores.ad.event');
+  static const EventChannel eventChannel = EventChannel('bitores.ad.event');
   // static const MethodChannel testChannel = MethodChannel('bitores.ad.test');
 
   static const MethodChannel ios_channel = const MethodChannel('bitores.ad.ios');
@@ -57,11 +45,11 @@ class _MyAppState extends State<MyApp> {
     if(Platform.isIOS){
       //ios相关代码
       print('is ios');
-      // eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+      eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
     }else if(Platform.isAndroid){
       //android相关代码
       print('is android');
-      // eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
+      eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
     }
 
     requestPermiss();

@@ -47,13 +47,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>照相</string>
+	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>始终允许</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>需要允许</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>美颜</string>
+	<true/>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
 </dict>

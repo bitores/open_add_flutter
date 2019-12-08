@@ -172,14 +172,14 @@ class FirstScreen1 extends StatelessWidget {
       ),
       body:  Column(children: <Widget>[
         Container(
-            child: FrameView(onFrameViewCreated: _onFrameViewCreated,),
-            height: 400,
-            //width: 600,
-        ),
-        Container(
           child: FrameView(onFrameViewCreated: _onFrameViewCreated2,),
           height: 140,
           //width: 600,
+        ),
+        Container(
+            child: FrameView(onFrameViewCreated: _onFrameViewCreated3,),
+            height: 400,
+            //width: 600,
         ),
         Center(child: GestureDetector(child:Text("看20分钟视频",),onTap: _onFrameViewCreated0,),)
 
@@ -194,7 +194,7 @@ class FirstScreen1 extends StatelessWidget {
     //  VideoAd.showVieoBaidu();
   }
 
-  void _onFrameViewCreated(FrameViewController controller) {
+  void _onFrameViewCreated3(FrameViewController controller) {
     //穿山甲  feed广告  广告id
    controller.loadFeedAdCsj("901121737");
     //百度    广告id
